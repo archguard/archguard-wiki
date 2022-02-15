@@ -21,7 +21,7 @@ OpenSource processing
 
 ## Backend
 
-- [ ] fitness model
+- [ ] architecture fitness model (new)
    - [ ] document check
 - [ ] Scanner
    - [ ] dependencies_java
