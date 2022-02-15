@@ -55,6 +55,12 @@ $ git filter-repo --path FOLDER-NAME1/ --path FOLDER-NAME2/
 > Ref 'refs/heads/BRANCH-NAME' was rewritten```
 ```
 
+## 初步计划
+- 模型设计（通用代码分析模型）
+- 本地最小化部署
+- 前后端服务划分
+- 前后端代码规范
+
 
 
 
