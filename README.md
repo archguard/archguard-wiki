@@ -55,9 +55,18 @@ $ git filter-repo --path FOLDER-NAME1/ --path FOLDER-NAME2/
 > Ref 'refs/heads/BRANCH-NAME' was rewritten```
 ```
 
+
 ## 定位
-- 数据分析展示平台
-- 集成分析工具
+架构分析可视化
+
+待讨论：
+- 是平台，还是工具？
+- 和其他工具集的关系？
+
+## 基础需求
+- 数据可视化
+- 灵活配置
+- 支持多语言，多框架
 
 ## 路线图
 - 模型更新
