@@ -6,35 +6,19 @@ OpenSource processing
 
 ## Frontend
 
-- [ ] [ArchGuard CLI](https://github.com/archguard/arch-guard-cli)
-   - [ ] code check
-   - [ ] license check
-   - [ ] history check
-   - [ ] secret key check
-   - [ ] setup document check
+- [x] [ArchGuard CLI](https://github.com/archguard/arch-guard-cli)
 - [ ] ArchGuard Frontend
-   - [ ] code check
-   - [ ] license check
-   - [ ] history check
-   - [ ] secret key check
-   - [ ] setup document check
+- [x] ArchGuard.org 开源
 
 ## Backend
 
 - [ ] architecture fitness model (new)
-   - [ ] document check
 - [ ] Scanner
    - [ ] dependencies_java
    - [ ] scan_java_bytecode
    - [ ] scan_git  
    - [ ] scan_jacoco 
 - [ ] Backend services
-   - [ ] code check
-   - [ ] license check
-   - [ ] history check
-   - [ ] secret key check
-   - [ ] setup document check
-
 
 # Opensource notes
 
@@ -52,7 +36,7 @@ OpenSource processing
 $ git filter-repo --path FOLDER-NAME1/ --path FOLDER-NAME2/
 # Filter the specified branch in your directory and remove empty commits
 > Rewrite 48dc599c80e20527ed902928085e7861e6b3cbe6 (89/89)
-> Ref 'refs/heads/BRANCH-NAME' was rewritten```
+> Ref 'refs/heads/BRANCH-NAME' was rewritten
 ```
 
 
@@ -79,6 +63,9 @@ $ git filter-repo --path FOLDER-NAME1/ --path FOLDER-NAME2/
 - 部署整合
   - flyway整合
   - deploy整合
+
+- 基础设施迁移
+  - maven to gradle
   
 - 前端服务划分
   - 分析现有前端服务
@@ -107,6 +94,6 @@ $ git filter-repo --path FOLDER-NAME1/ --path FOLDER-NAME2/
   
 - 官网维护
   - 官网内容定时更新
-
+  - 官网博客
 
 
