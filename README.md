@@ -24,13 +24,15 @@ OpenSource processing
 
 ## 版本管理
 
-### Git 操作：只保留某目录
+基于：[git-filter-repo](https://htmlpreview.github.io/?https://github.com/newren/git-filter-repo/blob/docs/html/git-filter-repo.html) 的代码过滤
 
 项目中包含了密钥等内容，需要从 Git 历史中消除，以确保安全。
 
 文档：[Splitting a subfolder out into a new repository](https://docs.github.com/en/get-started/using-git/splitting-a-subfolder-out-into-a-new-repository)
 
 1. 安装 [filter-repo](https://github.com/newren/git-filter-repo/blob/main/INSTALL.md)
+2. 
+### Git 操作：只保留某目录
 
 ```
 $ git filter-repo --path FOLDER-NAME1/ --path FOLDER-NAME2/
@@ -39,8 +41,18 @@ $ git filter-repo --path FOLDER-NAME1/ --path FOLDER-NAME2/
 > Ref 'refs/heads/BRANCH-NAME' was rewritten
 ```
 
+### GIt 操作：反向删除某个目录 
+
+```
+$ git filter-repo --path FOLDER-NAME1/ --path FOLDER-NAME2/  --invert-paths 
+# Filter the specified branch in your directory and remove empty commits
+> Rewrite 48dc599c80e20527ed902928085e7861e6b3cbe6 (89/89)
+> Ref 'refs/heads/BRANCH-NAME' was rewritten
+```
+
 
 ## 定位
+
 架构分析可视化
 
 待讨论：
