@@ -94,11 +94,14 @@ git remote remove project-a
   - [ ] 模型维护策略
   
 - 部署整合
-  - [ ] flyway整合
-  - [ ] deploy整合
+  - [x] flyway 整合
+  - [ ] deploy 整合 - 打包成一个应用
+     - [ ] 数据库迁移
+     - [ ] Influxdb, MySQL 工具检查 
+     - [ ] serve 前后端
 
 - 基础设施迁移
-  - [ ] maven to gradle
+  - [x] maven to gradle
   
 - 前端服务划分
   - [ ] 分析现有前端服务
@@ -106,7 +109,7 @@ git remote remove project-a
   
 - 后端服务划分
   - [ ] 分析现有后端服务
-  - [ ] 整合/拆分后端服务
+  - [x] 整合/拆分后端服务
   
 - scanner
   - [ ] 分析现有scanner职责
