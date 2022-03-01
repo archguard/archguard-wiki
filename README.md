@@ -88,7 +88,7 @@ git remote remove project-a
 当前目标：做出一个模型汇报（如C4）MVP
 
 ## 待办事项
-- 快速部署（5分钟部署）@DoubleDuckDuck
+- [ ] 快速部署（5分钟部署）@DoubleDuckDuck
 - [ ] 整理功能文档 @isixline
 - 开发规范
    - [ ] lint配置
