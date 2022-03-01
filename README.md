@@ -7,8 +7,6 @@ OpenSource processing
 ## Docker Organization
  - [archguard](https://hub.docker.com/orgs/archguard/repositories)
 
-# Opensource notes
-
 ## 定位：架构治理
 - 架构评估
 - 架构改造
@@ -17,7 +15,7 @@ OpenSource processing
 目标用户：架构师
 适用场景：向下管理，向上汇报，日常沟通
 
-目标
+## 目标
 - 展示架构现状，以及理想状态和现实状态的差距，提供给架构师分析
 - ArchGuard 作为 Pipline ，插件化各流程，基于模型来分析评估
 	- 扫描（定制）-》基于模型进行分析（标准化）-》评估（配置）
@@ -29,14 +27,14 @@ OpenSource processing
 
 当前目标：做出一个模型汇报（如C4）MVP
 
-开发规范更新：
+## 开发规范更新：
 - .github 定义贡献文档
 
-重构策略：
+## 重构策略：
 - 把问题自动化重现出来
 - 通过工具找出问题（自己重构自己）
 
-电梯演讲
+## 电梯演讲
 - 对于：架构师
 - 他们想：提升向下管理，向上汇报，日常沟通的效率
 - 这个：ArchGuard
@@ -45,6 +43,8 @@ OpenSource processing
 - 不同于：sonar
 - 它的优势是：作为架构层面的工具集
 
+
+# Opensource notes
 
 ## 版本管理
 
