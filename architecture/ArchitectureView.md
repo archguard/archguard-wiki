@@ -48,46 +48,173 @@ TODO
 
 ## Archguard子系统(Workspace/Module)级别的架构视图模型实现
 
-V0.1:
+V0.2:
 
+ - 全局视图 and 概念视图
 ```mermaid
 classDiagram
 class ArchitectureView
 
-ArchitectureView "1" o-- "1" ConceptArchitecture
-ArchitectureView "1" o-- "1" ModuleArchitecture
-ArchitectureView "1" o-- "1" ExecutionArchitecture
-ArchitectureView "1" o-- "1" CodeArchitecture
+ArchitectureView "1" o-- "1" ConceptArchitecture : Aggregation
+ArchitectureView "1" o-- "1" ModuleArchitecture : Aggregation
+ArchitectureView "1" o-- "1" ExecutionArchitecture : Aggregation
+ArchitectureView "1" o-- "1" CodeArchitecture : Aggregation
 
 class ConceptArchitecture {
-	+ConceptType conceptType
-	+String domain
+	ConceptType conceptType
 }
 
-class ModuleArchitecture {
-	+List<MLayer> layers
+class DomainModel
+
+ConceptArchitecture "1" *-- "N" DomainModel : Composition
+
+
+```
+ - 代码视图
+
+```mermaid
+classDiagram
+class CodeArchitecture {
+	Language language
+	String languageVersion
+	List<CodeStructure> codeStructures
+	BuildTool buildTool
+	List<Dependency> dependencies
+	AppType type
 }
+
+class Language{
+    <<enumeration>>
+    JAVA
+    KOTLIN
+    SCALA
+    CLOJURE
+}
+
+class BuildTool{
+    <<enumeration>>
+    MAVEN
+    GRADLE
+		SBT
+}
+
+class AppType{
+    <<enumeration>>
+    WEB
+    CLI
+    DATA
+    COMPILE
+}
+
+
+```
+
+
+
+ - 执行视图
+
+```mermaid
+classDiagram
 
 class ExecutionArchitecture {
-	+ExecutionType executionType
+ 
 }
 
-class CodeArchitecture {
-	+Workspace workspace
+class Connection {
+	ConnectionType connectionType
+	ConnectorStyle connectorStyle
+	Component component
+	ConnectionDirection direction
 }
+
+class ConnectorStyle {
+	<<enumeration>>
+	HTTP
+	RPC
+	DependencyInjection
+	SQLLink
+	Protocol
+}
+
+class ConnectionType {
+	 <<enumeration>>
+	 INBOUND
+	 OUTBOULD
+}
+
+class ConnectionDirection {
+	 <<enumeration>>
+	 INBOUND
+	 OUTBOULD
+}
+
+ExecutionArchitecture "1" *-- "N" Connection : Composition
+
+```
+
+ - 模块视图
+```mermaid
+classDiagram
+class ModuleArchitecture {
+	<<interface>>
+}
+
+class LayersArchitecture {
+	List<MLayer> layers
+}
+
+LayersArchitecture --|> ModuleArchitecture :implements
+
+class DDDArchitecture {
+	Infrastructure infra
+	Application application
+	Domain domain
+	Interface interface
+}
+
+DDDArchitecture --|> ModuleArchitecture :implements
+
+class ModuledDDDArchitecture {
+	List<DDDArchitecture> modules
+}
+
+ModuledDDDArchitecture --|> ModuleArchitecture :implements
+
+class MVCArchiture {
+	Model model
+	View view
+	Controller controller
+}
+
+MVCArchiture --|> ModuleArchitecture :implements
+
+class PipesAndFilterArchiture {
+	List<Pipe> pipes
+	List<Filter> filters
+	Datasource datasource
+	DataReceiver dataReceiver
+}
+
+PipesAndFilterArchiture --|> ModuleArchitecture :implements
 
 class MLayer {
-	+List<MModule> components
-	+String name
+	List<MModule> components
+	String name
 }
 
-ModuleArchitecture "1" *-- "N" MLayer
+LayersArchitecture "1" *-- "N" MLayer
 MLayer "1" *--  "N" MModule
 
+class Microkernel {
+	Kernal kernel
+	List<Plugin> plugins
+}
+
+Microkernel --|> ModuleArchitecture :implements 
 
 class MModule{
     <<abstract>>
-    String name
+ 	String name
 }
 
 class MComponent {
@@ -108,9 +235,17 @@ MConnector --|> MModule :implements
 MPort --|> MModule :implements
 MRole --|> MModule :implements
 
+
 ```
 
+----------------------
 
+**Comment**
+
+- 概念视图 展示 domain object uml视角
+- 模块视图 不同架构模型的模块展示
+- 执行视图 架构的端口 内向 外向
+- 代码视图 整个项目的代码结构
 
 ## 参考资料
 
