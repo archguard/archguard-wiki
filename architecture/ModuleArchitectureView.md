@@ -68,15 +68,53 @@ class Dependency {
 >
 > [domain-driven-design.org]
 
+```mermaid
+classDiagram
+class DDDArchiture {
+	Infrastructure infra
+	Application application
+	Domain domain
+	Interface interface
+	List<Dependency> dependencies
+}
+
+class Domain {
+	List<Aggregate> aggregates
+	List<Repository> repositories
+	List<DomainService> domainServices
+	List<Factory> factories
+}
+
+class Application {
+	List<ApplicationService> applicationServices
+}
+
+class Infrastructure {
+	List<Adaptor> adaptors
+}
+
+class Interface {
+	List<Controller> controllers
+}
+```
+
 
 
 ## ModuledDDD
 
+
+
 ## 分层架构
+
+
 
 ## 管道架构
 
+
+
 ## 微内核架构
+
+
 
 ## 微服务架构
 
