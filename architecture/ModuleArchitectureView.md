@@ -17,10 +17,10 @@
 ```mermaid
 classDiagram
 class MVCArchiture {
-	List<Model> models
-	List<View> views
-	List<Controller> controllers
-	List<Dependency> dependencies
+	List~Model~ models
+	List~View~ views
+	List~Controller~ controllers
+	List~Dependency~ dependencies
 }
 
 class Model {
@@ -75,26 +75,26 @@ class DDDArchiture {
 	Application application
 	Domain domain
 	Interface interface
-	List<Dependency> dependencies
+	List~Dependency~ dependencies
 }
 
 class Domain {
-	List<Aggregate> aggregates
-	List<Repository> repositories
-	List<DomainService> domainServices
-	List<Factory> factories
+	List~Aggregate~ aggregates
+	List~Repository~ repositories
+	List~DomainService~ domainServices
+	List~Factory~ factories
 }
 
 class Application {
-	List<ApplicationService> applicationServices
+	List~ApplicationService~ applicationServices
 }
 
 class Infrastructure {
-	List<Adaptor> adaptors
+	List~Adaptor~ adaptors
 }
 
 class Interface {
-	List<Controller> controllers
+	List~Controller~ controllers
 }
 ```
 

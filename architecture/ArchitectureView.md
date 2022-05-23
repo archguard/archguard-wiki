@@ -159,7 +159,7 @@ class ExecutionArchitecture {
 class Connection {
 	ConnectionType connectionType
 	ConnectorStyle connectorStyle
-	List<Component> components
+	List~Component~ components
 }
 
 class ConnectorStyle {
@@ -189,7 +189,7 @@ class ModuleArchitecture {
 }
 
 class LayersArchitecture {
-	List<MLayer> layers
+	List~MLayer~ layers
 }
 
 LayersArchitecture --|> ModuleArchitecture :implements
@@ -204,7 +204,7 @@ class DDDArchitecture {
 DDDArchitecture --|> ModuleArchitecture :implements
 
 class ModuledDDDArchitecture {
-	List<DDDArchitecture> modules
+	List~DDDArchitecture~ modules
 }
 
 ModuledDDDArchitecture --|> ModuleArchitecture :implements
@@ -218,8 +218,8 @@ class MVCArchiture {
 MVCArchiture --|> ModuleArchitecture :implements
 
 class PipesAndFilterArchiture {
-	List<Pipe> pipes
-	List<Filter> filters
+	List~Pipe~ pipes
+	List~Filter~ filters
 	Datasource datasource
 	DataReceiver dataReceiver
 }
@@ -227,7 +227,7 @@ class PipesAndFilterArchiture {
 PipesAndFilterArchiture --|> ModuleArchitecture :implements
 
 class MLayer {
-	List<MModule> components
+	List~MModule~ components
 	String name
 }
 
@@ -236,7 +236,7 @@ MLayer "1" *--  "N" MModule
 
 class Microkernel {
 	Kernal kernel
-	List<Plugin> plugins
+	List~Plugin~ plugins
 }
 
 Microkernel --|> ModuleArchitecture :implements 
