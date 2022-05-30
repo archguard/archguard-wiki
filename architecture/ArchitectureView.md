@@ -71,12 +71,15 @@
 
 代码视图与一个SubModule或者Workspace中的代码实现紧密关联，模块，包，文件的树状组织结构，构建工具，依赖库，AST，打包和部署的形式等都属于代码视图的模型。
 
-##  模式划分原则
+## 模式划分原则
 
 > 模式的名称大都基于某一种特定实现之上，但在实践中的运用并不一定完全相同。只要具备了某模式的一些关键特征，我们就可以认为遵循了该模式。
 >
-> []
+> [POSA4]
 
+## Archguard模型的流动与实现
+
+![](ArchModel-Flow.png)
 
 ##  Archguard系统级别的架构视图模型实现（演进中）
 
@@ -147,9 +150,9 @@ classDiagram
 class CodeArchitecture {
 	Language language
 	String languageVersion
-	List<CodeStructure> codeStructures
+	List~CodeStructure~ codeStructures
 	BuildTool buildTool
-	List<Dependency> dependencies
+	List~Dependency~ dependencies
 	AppType type
 }
 
