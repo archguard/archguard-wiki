@@ -80,7 +80,41 @@
 
 ##  Archguard系统级别的架构视图模型实现（演进中）
 
-TODO
+```mermaid
+classDiagram
+class ArchSystem {
+	String name
+	Architecture architecture
+	List~ArchSystem~ subSystems
+}
+
+class Architecture {
+	List~ArchComponent~ components
+	List~ArchConnection~ connections
+	ArchLinter: linter
+}
+
+class ArchComponent {
+	String name
+	ArchComponentType type
+	List~ArchComponent~ components
+}
+
+class ArchComponentConnection {
+	String source
+	String target
+}
+
+class ArchLinter {
+	String name
+}
+
+ArchSystem <-- Architecture
+Architecture <-- ArchComponent
+Architecture <-- ArchComponentConnection
+Architecture <-- ArchLinter
+
+```
 
 ## Archguard子系统(Workspace/Module)级别的架构视图模型实现（演进中）
 
