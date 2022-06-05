@@ -113,10 +113,21 @@ class ArchLinter {
 	String name
 }
 
+class LayeredArchitecture {
+	List~ArchLayer~ archLayers
+}
+
+class MicroserviceArchitecture {
+	List~ArchService~ archServices
+}
+
+
 ArchSystem <-- Architecture
 Architecture <-- ArchComponent
 Architecture <-- ArchComponentConnection
 Architecture <-- ArchLinter
+Architecture <|-- LayeredArchitecture
+Architecture <|-- MicroserviceArchitecture
 
 ```
 
