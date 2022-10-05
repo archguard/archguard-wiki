@@ -87,3 +87,12 @@ subgraph workbench
 end
 
 ```
+
+
+
+## 词汇表
+- System：分析的最小单位
+- ArchSystem：架构承载体
+- SystemInfo：系统扫描分析配置信息
+
+
